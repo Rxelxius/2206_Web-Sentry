@@ -1,0 +1,25 @@
+{
+  "name": "WebSentry Chrome Plugin",
+  "description": "This extension runs web checking code.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "popup.html",
+        "popup.css",
+        "popup.js",
+        "bootstrap.min.css",
+        "bootstrap.bundle.min.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
