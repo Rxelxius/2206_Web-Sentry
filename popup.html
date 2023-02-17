@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popup.js"></script>
+    <script src="section/checkheader.js"></script>
   </head>
 
   <body style="background-color: #FFEFD6">
@@ -33,10 +34,31 @@
           <button class="btn btn-primary">Click me</button>
         </section>
         <section id="section2" class="p-3" style="background-color: #F2DEBA;">
-          <p>This is another section</p>
+          <h2>Headers</h2>
+
+          <div class="row mb-3">
+            <div class="col-8">
+              <input id="urlInput" type="text" class="form-control" value="http://" placeholder="www.google.com">
+            </div>
+            <div class="col-4">
+              <button id="checkButton" type="button" class="btn btn-primary">Check Headers</button>
+            </div>
+          </div>
+          <p>The X-Frame-Options header is: <span id="xframeOptionsResult"></span></p>
+          <p>The Content-Security-Policy header is: <span id="cspResult"></span></p>
+          <p>The X-Content-Security-Policy header is: <span id="xcspResult"></span></p>
+          <p>The X-Webkit-CSP header is: <span id="xwebkitcspResult"></span></p>
+          <p>The X-XSS-Protection header is: <span id="xssProtectionResult"></span></p>
+          <p>The X-Content-Type-Options header is: <span id="contentTypeOptionsResult"></span></p>
+          <p>The Strict-Transport-Security header is: <span id="strictTransportSecurityResult"></span></p>
+          <p>The X-Permitted-Cross-Domain-Policy header is: <span id="permittedCrossDomainPolicyResult"></span></p>
+
+          <p id="result"></p>
         </section>
+        
         <section id="section3" class="p-3" style="background-color: #F2DEBA;">
-          <p>This is a third section</p>
+          <h2>This is a third section</h2>
+          <p>Some content here.</p>
         </section>
       </main>
     </div>

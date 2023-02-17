@@ -7,6 +7,14 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "section/checkheader.js"
+      ]
+    }
+  ],
   "web_accessible_resources": [
     {
       "resources": [
@@ -14,7 +22,8 @@
         "popup.css",
         "popup.js",
         "bootstrap.min.css",
-        "bootstrap.bundle.min.js"
+        "bootstrap.bundle.min.js",
+        "checkheader.js"
       ],
       "matches": ["<all_urls>"]
     }
