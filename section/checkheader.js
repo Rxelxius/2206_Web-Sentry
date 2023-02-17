@@ -42,6 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const contentTypeOptionsResultElement = document.querySelector('#contentTypeOptionsResult');
   const strictTransportSecurityResultElement = document.querySelector('#strictTransportSecurityResult');
   const permittedCrossDomainPolicyResultElement = document.querySelector('#permittedCrossDomainPolicyResult');
+  //
+  const accessControlAllowOriginResultElement = document.querySelector('#accessControlAllowOriginResult');
+  const xForwardedForResultElement = document.querySelector('#xForwardedForResult');
+  const serverResultElement = document.querySelector('#serverResult');
+  const viaResultElement = document.querySelector('#viaResult');
+  const setCookieResultElement = document.querySelector('#setCookieResult');
+
 
   checkButton.addEventListener('click', function() {
     const url = urlInput.value;
@@ -68,6 +75,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     checkHeader(url, 'X-Permitted-Cross-Domain-Policy', function(value) {
       permittedCrossDomainPolicyResultElement.textContent = value || 'not present';
+    });
+    checkHeader(url, 'Access-Control-Allow-Origin', function(value) {
+      accessControlAllowOriginResultElement.textContent = value || 'not present';
+    });
+    checkHeader(url, 'X-Forwarded-For', function(value) {
+      xForwardedForResultElement.textContent = value || 'not present';
+    });
+    checkHeader(url, 'Server', function(value) {
+      serverResultElement.textContent = value || 'not present';
+    });
+    checkHeader(url, 'Via', function(value) {
+      viaResultElement.textContent = value || 'not present';
+    });
+    checkHeader(url, 'Set-Cookie', function(value) {
+      setCookieResultElement.textContent = value || 'not present';
     });
   });
 });
