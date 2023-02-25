@@ -7,7 +7,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popup.js"></script>
     <script src="section/checkheader.js"></script>
-    
   </head>
 
   <body style="background-color: #FFEFD6">
@@ -19,13 +18,14 @@
 
     <div class="container-fluid">
       <main>
+        
         <!-- Navbar code -->
         <nav class="navbar navbar-light" style="background-color: #0E5E6F;">
           <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">Analysis</a>
-            <a class="nav-link text-light" href="#section1">Libraries</a>
-            <a class="nav-link text-light" href="#section2">Headers</a>
-            <a class="nav-link text-light" href="#section3">Cookies</a>
+            <a class="navbar-brand text-light">Analysis</a>
+            <a class="nav-link text-light" id="navbarLibraries" href="#">Libraries</a>
+            <a class="nav-link text-light" id="navbarHeaders" href="#">Headers</a>
+            <a class="nav-link text-light" id="navbarCookies" href="#">Cookies</a>
           </div>
         </nav>
 
@@ -34,12 +34,13 @@
           <p>Sample code in extension using Bootstrap.</p>
           <button class="btn btn-primary">Click me</button>
         </section>
+        
         <section id="section2" class="p-3" style="background-color: #F2DEBA;">
           <h2>Headers</h2>
 
           <div class="row mb-3">
             <div class="col-8">
-              <input id="urlInput" type="text" class="form-control" value="https://" placeholder="www.google.com">
+              <input id="urlInput" type="text" class="form-control" value="http://" placeholder="www.google.com">
             </div>
             <div class="col-4">
               <button id="checkButton" type="button" class="btn btn-primary">Check Headers</button>
@@ -53,16 +54,11 @@
           <p>Permissions-Policy: <span id="permissionsPolicyResult"></span></p>
 
 
-
-  
           <p>The X-XSS-Protection header is: <span id="xssProtectionResult"></span></p>
           <p>The X-Content-Type-Options header is: <span id="contentTypeOptionsResult"></span></p>
           <p>The Strict-Transport-Security header is: <span id="strictTransportSecurityResult"></span></p>
 
           <p>The Server header is: <span id="serverResult"></span></p>
-         
-          
-
           <p id="result"></p>
         </section>
         
