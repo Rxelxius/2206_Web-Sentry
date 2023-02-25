@@ -34,62 +34,125 @@ function parseHeaders(headers, headerName) {
 document.addEventListener('DOMContentLoaded', function() {
   const urlInput = document.querySelector('#urlInput');
   const checkButton = document.querySelector('#checkButton');
+
   const cspResultElement = document.querySelector('#cspResult');
-  const xcspResultElement = document.querySelector('#xcspResult');
-  const xwebkitcspResultElement = document.querySelector('#xwebkitcspResult');
+  const referrerPolicyResultElement = document.querySelector('#referrerPolicyResult');
+  const permissionsPolicyResultElement = document.querySelector('#permissionsPolicyResult');
+  
   const xframeOptionsResultElement = document.querySelector('#xframeOptionsResult');
   const xssProtectionResultElement = document.querySelector('#xssProtectionResult');
   const contentTypeOptionsResultElement = document.querySelector('#contentTypeOptionsResult');
   const strictTransportSecurityResultElement = document.querySelector('#strictTransportSecurityResult');
-  const permittedCrossDomainPolicyResultElement = document.querySelector('#permittedCrossDomainPolicyResult');
-  //
-  const accessControlAllowOriginResultElement = document.querySelector('#accessControlAllowOriginResult');
-  const xForwardedForResultElement = document.querySelector('#xForwardedForResult');
+
   const serverResultElement = document.querySelector('#serverResult');
-  const viaResultElement = document.querySelector('#viaResult');
-  const setCookieResultElement = document.querySelector('#setCookieResult');
+
 
 
   checkButton.addEventListener('click', function() {
     const url = urlInput.value;
+
     checkHeader(url, 'X-Frame-Options', function(value) {
-      xframeOptionsResultElement.textContent = value || 'not present';
+      if (value) {
+        xframeOptionsResultElement.textContent = value;
+        xframeOptionsResultElement.style.color = 'green';
+      } else {
+        xframeOptionsResultElement.textContent = 'Not Present - Vulnerable';
+        xframeOptionsResultElement.style.color = 'red';
+      }
     });
+
     checkHeader(url, 'Content-Security-Policy', function(value) {
-      cspResultElement.textContent = value || 'not present';
+      if (value) {
+        cspResultElement.textContent = value;
+        cspResultElement.style.color = 'green';
+      } else {
+        cspResultElement.textContent = 'Not Present - Vulnerable';
+        cspResultElement.style.color = 'red';
+      }
     });
-    checkHeader(url, 'X-Content-Security-Policy', function(value) {
-      xcspResultElement.textContent = value || 'not present';
+
+    checkHeader(url, 'Referrer-Policy', function(value) {
+      if (value && value.includes('unsafe-url')) {
+        referrerPolicyResultElement.textContent = value;
+        referrerPolicyResultElement.style.color = 'red';
+      } else if (value) {
+        referrerPolicyResultElement.textContent = value;
+        referrerPolicyResultElement.style.color = 'green';
+      } else {
+        referrerPolicyResultElement.textContent = 'Not Present - Vulnerable';
+        referrerPolicyResultElement.style.color = 'red';
+      }
     });
-    checkHeader(url, 'X-Webkit-CSP', function(value) {
-      xwebkitcspResultElement.textContent = value || 'not present';
+
+    checkHeader(url, 'Permissions-Policy', function(value) {
+      if (value) {
+        permissionsPolicyResultElement.textContent = value;
+        permissionsPolicyResultElement.style.color = 'green';
+      } else {
+        permissionsPolicyResultElement.textContent = 'Not Present - Vulnerable';
+        permissionsPolicyResultElement.style.color = 'red';
+      }
     });
+
+
+
     checkHeader(url, 'X-XSS-Protection', function(value) {
-      xssProtectionResultElement.textContent = value || 'not present';
+      if (value === '0') {
+        xssProtectionResultElement.textContent = '0 - Vulnerable';
+        xssProtectionResultElement.style.color = 'red';
+      } else if (value) {
+        xssProtectionResultElement.textContent = value;
+        xssProtectionResultElement.style.color = 'green';
+      } else {
+        xssProtectionResultElement.textContent = 'Not Present - Vulnerable';
+        xssProtectionResultElement.style.color = 'red';
+      }
     });
+
+
     checkHeader(url, 'X-Content-Type-Options', function(value) {
-      contentTypeOptionsResultElement.textContent = value || 'not present';
+      if (value) {
+        contentTypeOptionsResultElement.textContent = value;
+        contentTypeOptionsResultElement.style.color = 'green';
+      } else {
+        contentTypeOptionsResultElement.textContent = 'Not Present - vulnerable';
+        contentTypeOptionsResultElement.style.color = 'red';
+      }
     });
+
+
+    
     checkHeader(url, 'Strict-Transport-Security', function(value) {
-      strictTransportSecurityResultElement.textContent = value || 'not present';
+      if (value) {
+        var maxAge = parseInt(value.match(/max-age\s*=\s*(\d+)/i)[1]);
+        if (maxAge < 31536000) {
+          strictTransportSecurityResultElement.textContent = value + ' - vulnerable';
+          strictTransportSecurityResultElement.style.color = 'red';
+        } else {
+          strictTransportSecurityResultElement.textContent = value;
+          strictTransportSecurityResultElement.style.color = 'green';
+        }
+      } else {
+        strictTransportSecurityResultElement.textContent = 'Not Present - vulnerable';
+        strictTransportSecurityResultElement.style.color = 'red';
+      }
     });
-    checkHeader(url, 'X-Permitted-Cross-Domain-Policy', function(value) {
-      permittedCrossDomainPolicyResultElement.textContent = value || 'not present';
-    });
-    checkHeader(url, 'Access-Control-Allow-Origin', function(value) {
-      accessControlAllowOriginResultElement.textContent = value || 'not present';
-    });
-    checkHeader(url, 'X-Forwarded-For', function(value) {
-      xForwardedForResultElement.textContent = value || 'not present';
-    });
+
+
     checkHeader(url, 'Server', function(value) {
-      serverResultElement.textContent = value || 'not present';
+      if (!value) {
+        serverResultElement.textContent = 'Not Present - vulnerable';
+        serverResultElement.style.color = 'red';
+      } else if (/(\d+\.\d+)/.test(value)) {
+        serverResultElement.textContent = value + ' - vulnerable';
+        serverResultElement.style.color = 'red';
+      } else {
+        serverResultElement.textContent = value;
+        serverResultElement.style.color = 'green';
+      }
     });
-    checkHeader(url, 'Via', function(value) {
-      viaResultElement.textContent = value || 'not present';
-    });
-    checkHeader(url, 'Set-Cookie', function(value) {
-      setCookieResultElement.textContent = value || 'not present';
-    });
+    
+  
+    
   });
 });
