@@ -11,24 +11,33 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "section/checkheader.js"
+        "section/checkheader.js",
+        "section/contentscript.js"
+        
       ]
     }
   ],
+  "background": {
+    "script": ["section/background.js"]
+  },
   "web_accessible_resources": [
     {
       "resources": [
         "popup.html",
         "popup.css",
-        "popup.js",
+        "js/popup.js",
         "bootstrap.min.css",
         "bootstrap.bundle.min.js",
-        "checkheader.js"
+        "checkheader.js",
+        "js/jquery.min.js",
+        "section/jquery-version.js"
       ],
       "matches": ["<all_urls>"]
     }
+   
   ],
   "permissions": [
-    "activeTab"
+    "activeTab","cookies","webRequest","webRequestBlocking"
   ]
+ 
 }
