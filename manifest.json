@@ -11,10 +11,14 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "section/checkheader.js"
+        "section/checkHeader.js",
+        "section/checkLibraries.js"
       ]
     }
   ],
+  "background": {
+    "script": ["section/background.js"]
+  },
   "web_accessible_resources": [
     {
       "resources": [
@@ -23,12 +27,19 @@
         "popup.js",
         "bootstrap.min.css",
         "bootstrap.bundle.min.js",
-        "checkheader.js"
+        "js/jquery.min.js",
+        "checkHeader.js",
+        "section/jquery-version.js"
       ],
       "matches": ["<all_urls>"]
     }
   ],
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "cookies"
   ]
+
 }
