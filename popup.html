@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/popup.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Script libraries -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/popup.js"></script>
-    <script src="section/checkheader.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="section/checkHeader.js"></script>
+    <script src="section/jquery-version.js"></script>
+    <script src="section/checkLibraries.js"></script>
+    <script src="section/background.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+    
   </head>
 
   <body style="background-color: #FFEFD6">
@@ -29,57 +39,59 @@
           </div>
         </nav>
 
+        <!-- Initial Section -->
+        <section id="initialSection" class="p-3" style="background-color:#F2DEBA;">
+          <h2>Current Detected URL</h2>
+          <p id="url"></p>
+        </section>
+
+        <!-- Section checking for Libraries -->
         <section id="section1" class="p-3" style="background-color: #F2DEBA;">
-          <h2>This is a section.</h2>
-          <p>Sample code in extension using Bootstrap.</p>
-          <button class="btn btn-primary">Click me</button>
+          <h2>Detected JavaScript Libraries:</h2>
+          <p>Current version of jQuery on this page: </p>
+          <div id="result"></div>
         </section>
         
+        <!-- Section checking for webHeaders -->
         <section id="section2" class="p-3" style="background-color: #F2DEBA;">
           <h2>Headers</h2>
+          
+          <div id="header-details">
+            <p>The status code is: <span id="statusCodeElement"></span></p>
+            <p><span id="statusCodeElementExplanation"></span></p>
 
-          <div class="row mb-3">
-            <div class="col-8">
-              <input id="urlInput" type="text" class="form-control" value="http://" placeholder="www.google.com">
-            </div>
-            <div class="col-4">
-              <button id="checkButton" type="button" class="btn btn-primary">Check Headers</button>
-            </div>
+            <p>The X-Frame-Options header is: <span id="xframeOptionsResult"></span></p>
+            <p><span id="xframeOptionsResultExplanation"></span></p>
+
+            <p>The Content-Security-Policy header is: <span id="cspResult"></span></p>
+            <p><span id="cspResultExplanation"></span></p>
+
+            <p>Referrer-Policy: <span id="referrerPolicyResult"></span></p>
+            <p><span id="referrerPolicyResultExplanation"></span></p>
+            
+            <p>Permissions-Policy: <span id="permissionsPolicyResult"></span></p>
+            <p><span id="permissionsPolicyResultExplanation"></span></p>
+
+            <p>The X-XSS-Protection header is: <span id="xssProtectionResult"></span></p>
+            <p><span id="xssProtectionResultExplanation"></span></p>
+
+            <p>The X-Content-Type-Options header is: <span id="contentTypeOptionsResult"></span></p>
+            <p><span id="contentTypeOptionsResultExplanation"></span></p>
+
+            <p>The Strict-Transport-Security header is: <span id="strictTransportSecurityResult"></span></p>
+            <p><span id="strictTransportSecurityResultExplanation"></span></p>
+
+            <p>The Server header is: <span id="serverResult"></span></p>
+            <p><span id="serverResultExplanation"></span></p>
           </div>
-          
-          <p>The status code is: <span id="statusCodeElement"></span></p>
-          <p><span id="statusCodeElementExplanation"></span></p>
-
-          <p>The X-Frame-Options header is: <span id="xframeOptionsResult"></span></p>
-          <p><span id="xframeOptionsResultExplanation"></span></p>
-
-          <p>The Content-Security-Policy header is: <span id="cspResult"></span></p>
-          <p><span id="cspResultExplanation"></span></p>
-
-          <p>Referrer-Policy: <span id="referrerPolicyResult"></span></p>
-          <p><span id="referrerPolicyResultExplanation"></span></p>
-          
-          <p>Permissions-Policy: <span id="permissionsPolicyResult"></span></p>
-          <p><span id="permissionsPolicyResultExplanation"></span></p>
-
-          <p>The X-XSS-Protection header is: <span id="xssProtectionResult"></span></p>
-          <p><span id="xssProtectionResultExplanation"></span></p>
-
-          <p>The X-Content-Type-Options header is: <span id="contentTypeOptionsResult"></span></p>
-          <p><span id="contentTypeOptionsResultExplanation"></span></p>
-
-          <p>The Strict-Transport-Security header is: <span id="strictTransportSecurityResult"></span></p>
-          <p><span id="strictTransportSecurityResultExplanation"></span></p>
-
-          <p>The Server header is: <span id="serverResult"></span></p>
-          <p><span id="serverResultExplanation"></span></p>
           
           <p id="result"></p>
         </section>
         
+        <!-- Section checking for Cookies/Certifications-->
         <section id="section3" class="p-3" style="background-color: #F2DEBA;">
-          <h2>This is a third section</h2>
-          <p>Some content here.</p>
+          <h2>Certification Check</h2>
+          <p id="certstatus">Validation check</p>
         </section>
       </main>
     </div>
