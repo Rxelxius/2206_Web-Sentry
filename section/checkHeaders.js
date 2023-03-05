@@ -48,47 +48,28 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
 
     // Fetching URL Status Codes
-    fetch(headerUrl, { redirect: 'manual' }).then(response => {
-        const statusCode = response.status;
-        if (statusCode) {
-            const vulnerableStatusCodes = [203, 206, 226, 301, 302, 303, 307, 308, 400, 402, 403, 404, 405, 406, 407, 408, 409, 411, 412, 413, 414, 415, 416, 417, 421, 422, 423, 424, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 505, 507, 508, 510];
-            if (vulnerableStatusCodes.includes(statusCode)) {
-                // Display vulnerable status codes in red
-                statusCodeElement.textContent = statusCode + ' Vulnerable';
-                statusCodeElement.style.color = 'red';
-            } else {
-                // Display non-vulnerable status codes in green
-                statusCodeElement.textContent = statusCode + ' OK';
-                statusCodeElement.style.color = 'green';
-            }
+    fetch(headerUrl)
+    .then(response => {
+      const statusCode = response.status;
+      if (statusCode) {
+        const vulnerableStatusCodes = [203, 206, 226, 400,402,403,404,405,406,407,408,409,411,412,413,414,415,416,417,,421,422,423,424,426,428,429,431,451,500,501,502,503,504,505,507,508,510];
+        if (vulnerableStatusCodes.includes(statusCode)) {
+          // Display vulnerable status codes in red
+          statusCodeElement.textContent = statusCode + ' Vulnerable';
+          statusCodeElement.style.color = 'red';
         } else {
-            // Handle redirects
-            if (response.type === 'opaqueredirect') {
-            const vulnerableRedirectCodes = [301, 302, 303, 307, 308];
-            const fetchUrl = response.url;
-            fetch(fetchUrl, { redirect: 'follow' })
-                .then(newResponse => {
-                const newStatusCode = newResponse.status;
-                if (vulnerableRedirectCodes.includes(newStatusCode)) {
-                    statusCodeElement.textContent = newStatusCode + ' Vulnerable Redirect';
-                    statusCodeElement.style.color = 'red';
-                } else {
-                    statusCodeElement.textContent = newStatusCode + ' OK Redirect';
-                    statusCodeElement.style.color = 'red';
-                }
-                })
-                .catch(error => {
-                console.error('Error fetching URL:', error);
-                });
-            } else {
-            // Display non-vulnerable status codes in green if the status code is not present
-            statusCodeElement.textContent = 'No Status Code';
-            statusCodeElement.style.color = 'green';
-            }
+          // Display non-vulnerable status codes in green
+          statusCodeElement.textContent = statusCode + ' OK';
+          statusCodeElement.style.color = 'green';
         }
+      } else {
+        // Display non-vulnerable status codes in green if the status code is not present
+        statusCodeElement.textContent = 'No Status Code';
+        statusCodeElement.style.color = 'green';
+      }
     })
     .catch(error => {
-    console.error('Error fetching URL:', error);
+      console.error('Error fetching URL:', error);
     });
 
     // Checking X-frame options
