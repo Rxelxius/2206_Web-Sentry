@@ -11,7 +11,6 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "section/checkHeader.js",
         "section/checkLibraries.js"
       ]
     }
@@ -28,7 +27,6 @@
         "bootstrap.min.css",
         "bootstrap.bundle.min.js",
         "js/jquery.min.js",
-        "checkHeader.js",
         "section/jquery-version.js"
       ],
       "matches": ["<all_urls>"]
@@ -40,6 +38,6 @@
     "webRequest",
     "webRequestBlocking",
     "cookies"
-  ]
-
+  ],
+  "host_permissions": ["<all_urls>"]
 }
