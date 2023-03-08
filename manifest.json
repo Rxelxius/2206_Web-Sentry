@@ -1,45 +1,48 @@
 {
-  "name": "WebSentry Chrome Plugin",
-  "description": "This extension runs web checking code.",
-  "version": "1.0",
-  "manifest_version": 3,
-  "action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": [
-        "section/checkHeader.js",
-        "section/checkLibraries.js"
-      ]
-    }
-  ],
-  "background": {
-    "script": ["section/background.js"]
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "popup.html",
-        "popup.css",
-        "popup.js",
-        "bootstrap.min.css",
-        "bootstrap.bundle.min.js",
+    "manifest_version": 2,
+    "name": "WebSentry Chrome Plugin",
+    "version": "1.0",
+    "web_accessible_resources": [
+        "library/libraries.js",
+        "content_scripts/lib_detect.js",
         "js/jquery.min.js",
-        "checkHeader.js",
-        "section/jquery-version.js"
-      ],
-      "matches": ["<all_urls>"]
-    }
-  ],
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "webRequest",
-    "webRequestBlocking",
-    "cookies"
-  ]
-
+        "section/jquery-version.js",
+        "popup.js"
+    ],
+    "description": "This extension runs web checking code",
+    "background": {
+        "scripts": [
+            "library/libraries.js",
+            "background_scripts/main.js",
+            "section/background.js"
+        ],
+        "persistent": false
+    },
+    "page_action": {
+        "default_icon": 
+        "icons/icon.png",
+        "default_title": "This extension runs web checking code"
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "cookies"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content_scripts/inject.js"],
+            "run_at": "document_end"
+        },
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["content_scripts/detect.js"],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": ["<all_urls>"],
+            "js": ["section/checkLibraries.js"]
+          }
+    ]
 }

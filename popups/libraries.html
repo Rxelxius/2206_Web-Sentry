@@ -1,0 +1,133 @@
+<!--
+    description: Dispatches main.js
+-->
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="../css/popup.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<script src="libraries.js"></script>
+<script src="../js/popup.js"></script>
+
+
+<!-- Custom Scripts -->
+<script src="../section/jquery-version.js"></script>
+<script src="../section/background.js"></script>
+<script src="../js/jquery.min.js"></script>
+
+<script src="../section/checkLibraries.js" type="module"></script>
+<script src="../section/checkHeaders.js" type="module"></script>
+<script src="../section/checkCookies.js" type="module"></script>
+
+</head>
+<body style="background-color: #FFEFD6">
+    <header class="text-light text-center" style="background-color: #3A8891;">
+      <div class="container-fluid">
+        <h1>Web Sentry Analysis</h1>
+      </div>
+    </header>
+    
+    <main class="container-fluid">
+        
+      <!-- Navbar code -->
+      <nav class="navbar navbar-light" style="background-color: #0E5E6F;">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light">Analysis</a>
+          <a class="nav-link text-light" id="navbarLibraries" href="#">Libraries</a>
+          <a class="nav-link text-light" id="navbarHeaders" href="#">Headers</a>
+          <a class="nav-link text-light" id="navbarCookies" href="#">Cookies</a>
+        </div>
+      </nav>
+
+      <!-- Initial Section -->
+      <section id="initialSection" class="p-3" style="background-color:#F2DEBA;">
+        <h2>Current Detected URL</h2>
+        <p id="currentUrl"></p>
+      </section>
+
+      <!-- Section checking for Libraries -->
+      <section id="section1" class="p-3" style="background-color: #F2DEBA;">
+        <h2>Detected JavaScript Libraries:</h2>
+        <p>Current version of jQuery on this page: </p>
+        <div id="result"></div>
+        <div id="version"></div>
+        <div id="libraries"></div>
+      </section>
+        
+      <!-- Section checking for WebHeaders -->
+      <section id="section2" class="p-3" style="background-color: #F2DEBA;">
+        <h2>Headers</h2>
+        <table class="bordered">
+          <thead>
+            <tr>
+              <th>Header</th>
+              <th>Value</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Status Code</td>
+              <td><span id="statusCodeElement"></span></td>
+              <td><span id="statusCodeElementExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>X-Frame-Options</td>
+              <td><span id="xframeOptionsResult"></span></td>
+              <td><span id="xframeOptionsResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>Content-Security-Policy</td>
+              <td><span id="cspResult"></span></td>
+              <td><span id="cspResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>Referrer-Policy</td>
+              <td><span id="referrerPolicyResult"></span></td>
+              <td><span id="referrerPolicyResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>Permissions-Policy</td>
+              <td><span id="permissionsPolicyResult"></span></td>
+              <td><span id="permissionsPolicyResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>X-XSS-Protection</td>
+              <td><span id="xssProtectionResult"></span></td>
+              <td><span id="xssProtectionResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>X-Content-Type-Options</td>
+              <td><span id="contentTypeOptionsResult"></span></td>
+              <td><span id="contentTypeOptionsResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>Strict-Transport-Security</td>
+              <td><span id="strictTransportSecurityResult"></span></td>
+              <td><span id="strictTransportSecurityResultExplanation"></span></td>
+            </tr>
+            <tr>
+              <td>Server</td>
+              <td><span id="serverResult"></span></td>
+              <td><span id="serverResultExplanation"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>      
+        
+      <!-- Section checking for Cookies/Certifications-->
+      <section id="section3" class="p-3" style="background-color: #F2DEBA;">
+        <h2>Cookie Checker </h2>
+        <p id="cookie-info"></p>
+        <p id="insecure-warning"></p>
+        <p id="third-party-warning"></p>
+      </section>
+    </main>
+
+    <footer class="text-light text-center" style="background-color: #3A8891;">
+      <div class="container-fluid">
+        <p>&copy; 2023 ICT2206 Project</p>
+      </div>
+    </footer>
+  </body>
+</html>

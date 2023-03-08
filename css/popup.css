@@ -1,4 +1,36 @@
-body{
+body {
+    font-family: sans-serif;
+    min-height: 10px;
+    min-width: 120px;
     width: 600px;
     height: 300px;
+}
+div {
+    color: #424242;
+    font-size: 12px;
+    line-height: 18px;
+    white-space: nowrap;
+}
+a, a:link, a:visited {
+    color: inherit;
+    background-size: 14px, 15px;
+    padding-left: 20px;
+    text-decoration: none;
+    outline: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+span {
+    color: #9E9E9E;
+}
+
+table.bordered {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+  
+table.bordered th, table.bordered td {
+    border: 1px solid black;
+    padding: 8px;
 }
