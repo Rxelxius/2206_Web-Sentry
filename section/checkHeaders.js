@@ -77,11 +77,11 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         if (value) {
             xframeOptionsResultElement.textContent = value;
             xframeOptionsResultElement.style.color = 'green';
-            xframeOptionsResultExplanation.textContent = "Explanation for X-Frame-Options: The X-Frame-Options header provides Clickjacking protection by preventing the web page from being displayed inside an iframe.";
+            xframeOptionsResultExplanation.textContent = "The X-Frame-Options header provides Clickjacking protection by preventing the web page from being displayed inside an iframe.";
         } else {
             xframeOptionsResultElement.textContent = 'Not Present - Vulnerable';
             xframeOptionsResultElement.style.color = 'red';
-            xframeOptionsResultExplanation.textContent = "Explanation for X-Frame-Options: If the X-Frame-Options header is not present, the webpage may be vulnerable to Clickjacking attacks.";
+            xframeOptionsResultExplanation.textContent = "If the X-Frame-Options header is not present, the webpage may be vulnerable to Clickjacking attacks.";
         }
         
     });
@@ -91,11 +91,11 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         if (value) {
             cspResultElement.textContent = "Present";
             cspResultElement.style.color = 'green';
-            cspResultExplanation.textContent = "Explanation for Content-Security-Policy: If the Content-Security-Policy header is present, it helps to prevent attacks such as cross-site scripting (XSS) and clickjacking by specifying which resources are allowed to be loaded on the page.";
+            cspResultExplanation.textContent = "If the Content-Security-Policy header is present, it helps to prevent attacks such as cross-site scripting (XSS) and clickjacking by specifying which resources are allowed to be loaded on the page.";
         } else {
             cspResultElement.textContent = 'Not Present - Vulnerable';
             cspResultElement.style.color = 'red';
-            cspResultExplanation.textContent = "Explanation for Content-Security-Policy: If the Content-Security-Policy header is not present, the webpage may be vulnerable to attacks such as cross-site scripting (XSS) and clickjacking, as there is no policy in place to restrict the loading of resources on the page.";
+            cspResultExplanation.textContent = "If the Content-Security-Policy header is not present, the webpage may be vulnerable to attacks such as cross-site scripting (XSS) and clickjacking, as there is no policy in place to restrict the loading of resources on the page.";
         }
     });
 
@@ -104,15 +104,15 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         if (value && value.includes('unsafe-url')) {
             referrerPolicyResultElement.textContent = value;
             referrerPolicyResultElement.style.color = 'red';
-            referrerPolicyResultExplanation.textContent = "Explanation for Referrer-Policy: If the Referrer-Policy header contains the 'unsafe-url' directive, it can make the website vulnerable to attacks such as cross-site request forgery (CSRF), as it may leak sensitive information to third-party websites. It is recommended to use stricter directives such as 'no-referrer' or 'strict-origin-when-cross-origin'.";
+            referrerPolicyResultExplanation.textContent = "If the Referrer-Policy header contains the 'unsafe-url' directive, it can make the website vulnerable to attacks such as cross-site request forgery (CSRF), as it may leak sensitive information to third-party websites. It is recommended to use stricter directives such as 'no-referrer' or 'strict-origin-when-cross-origin'.";
         } else if (value) {
             referrerPolicyResultElement.textContent = value;
             referrerPolicyResultElement.style.color = 'green';
-            referrerPolicyResultExplanation.textContent = "Explanation for Referrer-Policy: The Referrer-Policy header specifies how much referrer information should be included in requests made from the current page. It helps to protect against attacks such as CSRF and information leakage to third-party websites.";
+            referrerPolicyResultExplanation.textContent = "The Referrer-Policy header specifies how much referrer information should be included in requests made from the current page. It helps to protect against attacks such as CSRF and information leakage to third-party websites.";
         } else {
             referrerPolicyResultElement.textContent = 'Not Present - Vulnerable';
             referrerPolicyResultElement.style.color = 'red';
-            referrerPolicyResultExplanation.textContent = "Explanation for Referrer-Policy: If the Referrer-Policy header is not present, the webpage may be vulnerable to attacks such as CSRF and information leakage to third-party websites, as there is no policy in place to control the amount of referrer information that is sent with requests.";
+            referrerPolicyResultExplanation.textContent = "If the Referrer-Policy header is not present, the webpage may be vulnerable to attacks such as CSRF and information leakage to third-party websites, as there is no policy in place to control the amount of referrer information that is sent with requests.";
         }
     });
 
@@ -121,11 +121,11 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         if (value) {
             permissionsPolicyResultElement.textContent = value;
             permissionsPolicyResultElement.style.color = 'green';
-            permissionsPolicyResultExplanation.textContent = "Explanation for Permissions-Policy: The Permissions-Policy header allows a website to specify which browser features are allowed to be used on the page, and by whom. It can help to prevent attacks such as clickjacking and code injection by limiting the permissions granted to third-party websites.";
+            permissionsPolicyResultExplanation.textContent = "The Permissions-Policy header allows a website to specify which browser features are allowed to be used on the page, and by whom. It can help to prevent attacks such as clickjacking and code injection by limiting the permissions granted to third-party websites.";
         } else {
             permissionsPolicyResultElement.textContent = 'Not Present - Vulnerable';
             permissionsPolicyResultElement.style.color = 'red';
-            permissionsPolicyResultExplanation.textContent = "Explanation for Permissions-Policy: If the Permissions-Policy header is not present, the webpage may be vulnerable to attacks such as clickjacking and code injection, as there is no policy in place to restrict the permissions granted to third-party websites.";
+            permissionsPolicyResultExplanation.textContent = "If the Permissions-Policy header is not present, the webpage may be vulnerable to attacks such as clickjacking and code injection, as there is no policy in place to restrict the permissions granted to third-party websites.";
         }
     });
 
@@ -151,11 +151,11 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         if (value) {
             contentTypeOptionsResultElement.textContent = value;
             contentTypeOptionsResultElement.style.color = 'green';
-            contentTypeOptionsResultExplanation.textContent = 'Explanation for X-Content-Type-Options: The X-Content-Type-Options header helps to prevent MIME sniffing attacks by instructing the browser to always use the declared content type. This can help prevent attacks that attempt to exploit content type inconsistencies in older browsers.';
+            contentTypeOptionsResultExplanation.textContent = 'The X-Content-Type-Options header helps to prevent MIME sniffing attacks by instructing the browser to always use the declared content type. This can help prevent attacks that attempt to exploit content type inconsistencies in older browsers.';
         } else {
             contentTypeOptionsResultElement.textContent = 'Not Present - vulnerable';
             contentTypeOptionsResultElement.style.color = 'red';
-            contentTypeOptionsResultExplanation.textContent = 'Explanation for X-Content-Type-Options: If the X-Content-Type-Options header is not present, the website may be vulnerable to MIME sniffing attacks in older browsers that can potentially lead to cross-site scripting (XSS) attacks.';
+            contentTypeOptionsResultExplanation.textContent = 'If the X-Content-Type-Options header is not present, the website may be vulnerable to MIME sniffing attacks in older browsers that can potentially lead to cross-site scripting (XSS) attacks.';
         }
     });
 

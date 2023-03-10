@@ -8,11 +8,14 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     var tabUrl = getDomainFromUrl(tabs[0].url);
     chrome.cookies.getAll({domain: tabUrl}, function(cookies) {
         if (cookies.length > 0) {
-            var cookieInfo = "";
             var hasInsecureCookies = false;
             var hasThirdPartyCookies = false;
+            var cookieInfo = "<table class='bordered'>";
             for (var i = 0; i < cookies.length; i++) {
-                cookieInfo += "Name: " + cookies[i].name + "<br>Value: " + cookies[i].value + "<br>Secure: " + cookies[i].secure + "<br>HttpOnly: " + cookies[i].httpOnly + "<br><br>";
+                cookieInfo += "<tr><th>Name:</th><th>" + cookies[i].name + "</th></tr>";
+                cookieInfo += "<tr><td>Value:</td><td>" + cookies[i].value + "</td></tr>";
+                cookieInfo += "<tr><td>Secure:</td><td>" + cookies[i].secure + "</td></tr>";
+                cookieInfo += "<tr><td>HttpOnly:</td><td>" + cookies[i].httpOnly + "</td></tr>";
                 if (!cookies[i].secure || !cookies[i].httpOnly) {
                     hasInsecureCookies = true;
                 }
@@ -20,6 +23,8 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
                     hasThirdPartyCookies = true;
                 }
             }
+            cookieInfo += "</table>";
+
                 document.getElementById('cookie-info').innerHTML = cookieInfo;
             if (hasInsecureCookies) {
                 document.getElementById('insecure-warning').textContent = tabUrl +' website has insecure cookies.';
