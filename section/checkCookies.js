@@ -27,12 +27,15 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
                 document.getElementById('cookie-info').innerHTML = cookieInfo;
             if (hasInsecureCookies) {
+                document.querySelector('#insecure-warning').style.color = 'red';
                 document.getElementById('insecure-warning').textContent = tabUrl +' website has insecure cookies.';
             }else{
+                document.querySelector('#insecure-warning').style.color = 'green';
                 document.getElementById('insecure-warning').textContent = tabUrl + ' website do not have insecure cookies.';
             }
     
             if (hasThirdPartyCookies) {
+                document.querySelector('#third-party-warning').style.color = 'blue';
                 document.getElementById('third-party-warning').textContent = tabUrl +' website uses third-party cookies.';
             }
             else{

@@ -13,8 +13,7 @@
     "background": {
         "scripts": [
             "library/libraries.js",
-            "background_scripts/main.js",
-            "section/background.js"
+            "background_scripts/main.js"
         ],
         "persistent": false
     },
