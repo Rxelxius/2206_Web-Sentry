@@ -150,7 +150,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'LitElement': {
+    'Lit-Element': {
         id: 'litelement',
         icon: 'polymer',
         url: 'https://lit-element.polymer-project.org/',
@@ -271,7 +271,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'jQuery UI': {
+    'jQueryUI': {
         id: 'jquery_ui',
         icon: 'jquery_ui',
         url: 'http://jqueryui.com',
@@ -349,7 +349,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'YUI 2': {
+    'YUI2': {
         id: 'yui',
         icon: 'yui',
         url: 'http://developer.yahoo.com/yui/2/',
@@ -361,7 +361,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'YUI 3': {
+    'YUI3': {
         id: 'yui3',
         icon: 'yui3',
         url: 'https://yuilibrary.com/',
@@ -387,7 +387,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Ext JS': {
+    'ExtJS': {
         id: 'extjs',
         icon: 'extjs',
         url: 'https://www.sencha.com/products/extjs/',
@@ -493,7 +493,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Next.js': {
+    'Next': {
         id: 'next',
         icon: 'next',
         url: 'https://nextjs.org/',
@@ -506,7 +506,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Next.js (Fast path)': {
+    'Next (Fast path)': {
         id: 'next-fast',
         icon: 'next',
         url: 'https://nextjs.org/',
@@ -596,7 +596,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Processing.js': {
+    'Processing-js': {
         id: 'processingjs',
         icon: 'processingjs',
         url: 'http://processingjs.org',
@@ -636,7 +636,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Mapbox': {
+    'Mapbox-GL': {
         id: 'mapbox',
         icon: 'mapbox',
         url: 'https://www.mapbox.com/',
@@ -649,7 +649,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Lo-Dash': {
+    'LoDash': {
         id: 'lodash',
         icon: 'lodash',
         url: 'https://lodash.com/',
@@ -773,7 +773,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Fabric.js': {
+    'Fabric': {
         id: 'fabricjs',
         icon: 'icon38', // currently has no icon
         url: 'http://fabricjs.com/',
@@ -786,7 +786,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'FuseJS': {
+    'Fuse.JS': {
         id: 'fusejs',
         icon: 'fusejs',
         url: 'http://fusejs.io/',
@@ -824,7 +824,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'Zepto.js': {
+    'Zepto': {
        id: 'zepto',
        icon: 'zepto',
        url: 'http://zeptojs.com',
@@ -837,7 +837,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'three.js': {
+    'three': {
        id: 'threejs',
        icon: 'icon38', // currently has no icon
        url: 'https://threejs.org/',
@@ -866,7 +866,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'CamanJS': {
+    'Caman': {
         id: 'camanjs',
         icon: 'camanjs',
         url: 'http://camanjs.com/',
@@ -882,7 +882,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'yepnope': {
+    'yepnopejs': {
         id: 'yepnope',
         icon: 'yepnope',
         url: 'http://yepnopejs.com/',
@@ -919,7 +919,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'ControlJS': {
+    'Control': {
         id: 'controljs',
         icon: 'icon38',
         url: 'http://stevesouders.com/controljs/',
@@ -957,7 +957,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'jQuery Tools': {
+    'jQueryTools': {
        id: 'jquerytools',
        icon: 'jquerytools',
        url: 'http://jquerytools.github.io/',
@@ -970,7 +970,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'Pusher': {
+    'Pusher-JS': {
        id: 'pusher',
        icon: 'pusher',
        url: 'https://pusher.com/docs/',
@@ -983,7 +983,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'Paper.js': {
+    'Paper': {
        id: 'paperjs',
        icon: 'paperjs',
        url: 'http://paperjs.org/',
@@ -1008,7 +1008,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'Move': {
+    'Move-JS': {
        id: 'move',
        icon: 'move',
        url: 'https://github.com/rsms/move',
@@ -1021,7 +1021,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'AmplifyJS': {
+    'Amplify': {
        id: 'amplifyjs',
        icon: 'amplifyjs',
        url: 'http://amplifyjs.com/',
@@ -1034,7 +1034,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
        }
     },
 
-    'Popcorn.js': {
+    'Popcorn': {
        id: 'popcornjs',
        icon: 'popcornjs',
        url: 'https://github.com/mozilla/popcorn-js/',
@@ -1110,7 +1110,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'jQuery Mobile': {
+    'jQuery-Mobile': {
         id: 'jquery-mobile',
         icon: 'jquery_mobile',
         url: 'http://jquerymobile.com/',
@@ -1124,7 +1124,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'WebFont Loader': {
+    'WebFontLoader': {
         id: 'webfontloader',
         icon: 'icon38',
         url: 'https://github.com/typekit/webfontloader',
@@ -1182,7 +1182,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Ember.js': {
+    'Ember': {
         id: 'emberjs',
         icon: 'emberjs',
         url: 'https://emberjs.com/',
@@ -1196,7 +1196,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Hammer.js': {
+    'HammerJS': {
         id: 'hammerjs',
         icon: 'hammerjs',
         url: 'http://eightmedia.github.io/hammer.js/',
@@ -1210,7 +1210,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         }
     },
 
-    'Visibility.js': {
+    'VisibilityJS': {
         id: 'visibilityjs',
         icon: 'icon38',
         url: 'https://github.com/ai/visibilityjs',
@@ -1274,7 +1274,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'DC.js': {
+    'DC': {
         id: 'dcjs',
         icon: 'dcjs',
         url: 'http://dc-js.github.io/dc.js/',
@@ -1311,7 +1311,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Isotope': {
+    'Isotope-Layout': {
         id: 'isotope',
         icon: 'isotope',
         url: 'https://isotope.metafizzy.co/',
@@ -1375,7 +1375,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Nuxt.js': {
+    'Nuxt': {
         id: 'nuxt',
         icon: 'nuxt',
         url: 'https://nuxtjs.org/',
@@ -1423,7 +1423,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Material Design Lite': {
+    'Material-Design-Lite': {
         id: 'materialdesignlite',
         icon: 'mdl',
         url: 'https://getmdl.io/',
@@ -1447,7 +1447,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Matter.js': {
+    'Matter-js': {
         id: 'matterjs',
         icon: 'matter-js',
         url: 'http://brm.io/matter-js/',
@@ -1471,7 +1471,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Sea.js': {
+    'SeaJS': {
         id: 'seajs',
         icon: 'icon38',
         url: 'https://seajs.github.io/seajs/docs/',
@@ -1483,7 +1483,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Moment.js': {
+    'Moment': {
         id: 'momentjs',
         icon: 'momentjs',
         url: 'http://momentjs.com/',
@@ -1496,7 +1496,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Moment Timezone': {
+    'Moment-Timezone': {
         id: 'moment-timezone',
         icon: 'momentjs',
         url: 'http://momentjs.com/timezone/',
@@ -1560,7 +1560,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Numeral.js': {
+    'Numeral': {
         id: 'numeraljs',
         icon: 'icon38', // currently has no icon
         url: 'http://numeraljs.com/',
@@ -1572,7 +1572,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'boomerang.js': {
+    'boomerang': {
         id: 'boomerangjs',
         icon: 'icon38', // currently has no icon
         url: 'https://soasta.github.io/boomerang/',
@@ -1644,7 +1644,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Magento': {
+    'Magento2': {
         id: 'magento',
         icon: 'magento',
         url: 'https://magento.com/',
@@ -1690,7 +1690,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Workbox': {
+    'Workbox-sw': {
       id: 'workbox',
       icon: 'workbox',
       url: 'https://developers.google.com/web/tools/workbox/',
@@ -1828,7 +1828,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
             return false;
         }
     },
-    'Create React App': {
+    'Create-React-App': {
         id: 'create-react-app',
         icon: 'cra',
         url: 'https://create-react-app.dev/',
@@ -1930,7 +1930,7 @@ var d41d8cd98f00b204e9800998ecf8427e_LibraryDetectorTests = {
         return false;
       }
     },
-    'WP Rocket':{
+    'WP-Rocket':{
         id:'wp-rocket',
         icon:'wp-rocket',
         url: 'https://wp-rocket.me/',
