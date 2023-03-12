@@ -39,7 +39,7 @@ Turn on developer mode to enable the upload and running of custom Chrome Extensi
 
 
 ## Authors
-[@xllRyan](https://github.com/xllRyan)
-[@2100723](https://github.com/2100723)
-[@TerraRyu](https://github.com/TerraRyu)
-[@Rxelxius](https://github.com/Rxelxius)
+- [@xllRyan](https://github.com/xllRyan)
+- [@2100723](https://github.com/2100723)
+- [@TerraRyu](https://github.com/TerraRyu)
+- [@Rxelxius](https://github.com/Rxelxius)
