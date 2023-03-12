@@ -45,22 +45,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
       );
     });
 
-    //Libraries -ADDED on 27 Feb 2022 - compare current jquery with latest
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {action: "checkJQueryVersion"}, function(response) {
-        if (response) {
+    // //Libraries -ADDED on 27 Feb 2022 - compare current jquery with latest
+    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    //   chrome.tabs.sendMessage(tabs[0].id, {action: "checkJQueryVersion"}, function(response) {
+    //     if (response) {
           
-          var resultDiv = document.getElementById("result");
-          if (response.error) {
-            resultDiv.innerHTML =  response.error ;
-          } else {
-            resultDiv.innerHTML = "JQuery version on page: " + response.version ;
-          }
-        }
-      });
-    });
-
-      
+    //       var resultDiv = document.getElementById("result");
+    //       if (response.error) {
+    //         resultDiv.innerHTML =  response.error ;
+    //       } else {
+    //         resultDiv.innerHTML = "JQuery version on page: " + response.version ;
+    //       }
+    //     }
+    //   });
+    // });
     
   });
 

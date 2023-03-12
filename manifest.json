@@ -5,8 +5,6 @@
     "web_accessible_resources": [
         "library/libraries.js",
         "content_scripts/lib_detect.js",
-        "js/jquery.min.js",
-        "section/jquery-version.js",
         "popup.js"
     ],
     "description": "This extension runs web checking code",
@@ -38,10 +36,6 @@
             "matches": ["http://*/*", "https://*/*"],
             "js": ["content_scripts/detect.js"],
             "run_at": "document_idle"
-        },
-        {
-            "matches": ["<all_urls>"],
-            "js": ["section/checkLibraries.js"]
-          }
+        }
     ]
 }

@@ -28,8 +28,11 @@ var addLibrary = function(library) {
 
         //Manual Checks
         thisLibraryURL = 'https://registry.npmjs.org/' + library.name;
-        if (library.name == "lit-element"){
-            thisLibraryURL = "https://registry.npmjs.org/@polymer/lit-element";
+        if (library.name == "jqueryui"){
+            thisLibraryURL = "https://registry.npmjs.org/jquery-ui";
+        }
+        if (library.name == "jquerytools"){
+            thisLibraryURL = "https://registry.npmjs.org/@types/jquery.tools";
         }
         if (library.name == "zurb"){
             thisLibraryURL = "https://registry.npmjs.org/foundation-sites";
